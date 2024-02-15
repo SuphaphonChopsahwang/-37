@@ -1,0 +1,336 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.logo {
+    width: 30%;
+}
+.logo img {
+    width: 200px;
+    float: left;
+}
+.logo span {
+    text-transform: uppercase;
+    color: orange;
+    font-weight: bold;
+    line-height: 215px;
+    font-size: 20px;
+    margin-left: 10px;
+}
+nav {
+    width: 80%;
+    height: 40px;
+    background: white;
+    margin: 80px auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.nav-menu {
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+}
+.nav-menu li {
+    list-style: none;
+    padding: 10px 15px ;
+    font-size: 20px;
+    color: #000000;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+.nav-menu li:last-child {
+    color: red;
+    font-weight: 500;
+}
+a:hover {
+    color: orangered;
+}
+.nav-right {
+    width: 30%;
+    display: flex;
+    justify-content: flex-end;
+}
+.nav-right li {
+    list-style: none;
+    margin: 0 15px;
+    font-size: 25px;
+    padding: 8px 20px;
+}
+.nav-right li:last-child {
+    border: 2px solid;
+    font-size: 20px;
+    border-radius: 20px;
+}
+i:hover {
+    color: orangered;
+    cursor: pointer;
+}
+.cart {
+    position: relative;
+}
+.cart::before {
+    position: absolute;
+    content: attr(data-count);
+    width: 25px;
+    height: 25px;
+    font-size: 12px;
+    line-height: 25px;
+    border-radius: 50%;
+    top: -20px;
+    left: 10px;
+    text-align: center;
+    background-color: red;
+    color: white;
+    cursor: pointer;
+    opacity: 0;
+}
+.cart.on::before {
+    opacity: 1;
+}
+main {
+    width: 100%;
+    height: 500px;
+    padding: 10px 8%;
+    display:  flex;
+    justify-content: space-between;
+}
+.item {
+    width: 24%;
+    height: 320px;
+    background: #b4b3b3;
+    padding: 4px;
+    position: relative;
+    transition: 0.5s;
+    border-radius: 20px;
+}
+.item:hover {
+    height: 490px;
+}
+.item:hover .data {
+    padding: 10px;
+    height: 350px;
+}
+.item:hover img {
+    transform: scale(0.8);
+}
+.item img {
+    width: 100%;
+    margin: auto;
+    transform: scale(1.07);
+    transition: inherit;
+}
+.data {
+    width: 100%;
+    height: 0;
+    background: white;
+    padding: 0;
+    position: absolute;
+    bottom: 1px;
+    left: 0;
+    transition: inherit;
+    border-radius: 0 0 20px 20px;
+    overflow: hidden;
+}
+.data p {
+    margin:  10px auto;
+}
+.data strong {
+    display:  inline-block;
+    width: 100%;
+}
+.data p:first-child strong {
+    width: 65%;
+}
+.price {
+    font-size: 18px;
+    font-weight: bold;
+    color: orangered;
+}
+.price-full {
+    font-size: 15px;
+    margin-left: 5px;
+    color: rgb(92, 91, 91);
+}
+.in-4 span {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 15px;
+    width: 70px;
+    height: 20px;
+    line-height: 10px;
+    border-radius: 20px;
+    background-color: white;
+    display: inline-block;
+    text-align: center;
+    margin: 0 6px;
+}
+.in-4 span.active {
+    background-color: rgb(255, 68, 0);
+    color: white;
+}
+.in-4-4 span {
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    border-radius: 50px;
+    background: white;
+    display: inline-block;
+    text-align: center;
+    margin: 0 6px;
+}
+
+.in-4-4:nth-of-type(2n) span {
+    background: rgb(133, 133, 133);
+    border: 2px solid red;
+}
+
+.in-4-4:nth-of-type(2n) span:first-child {
+    background: orangered;
+}
+
+.in-4-4:nth-of-type(2n) span:last-child {
+    background:black;
+}
+button {
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    padding: 8px 20px;
+    background: rgb(0, 0, 0);
+    margin: 5px 30px 0 5px;
+    color: white;
+    cursor: pointer;
+}
+
+button.add {
+    background: rgb(0, 0, 0);
+}
+
+button:hover {
+    color: white;
+    background-color: hsl(0, 100%, 50%);
+}
+.image-animate {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: inherit;
+    width: 100%;
+    height: 300px;
+    border-radius: inherit;
+    display: none;
+}
+.image-animate.active {
+    display: block;
+    z-index: 5;
+}
+.item:nth-child(1) .image-animate.active {
+    animation: first 0.5s ease-in;
+}
+
+.item:nth-child(2) .image-animate.active {
+    animation: second 0.5s ease-in;
+}
+
+.item:nth-child(3) .image-animate.active {
+    animation: third 0.5s ease-in;
+}
+
+.item:nth-child(4) .image-animate.active {
+    animation: four 0.5s ease-in;
+}
+
+@keyframes first {
+    to {
+        transform: scale(0.08);
+        top: -305px;
+        left: 925px;
+    }
+}
+
+@keyframes second {
+    to {
+        transform: scale(0.08);
+        top: -305px;
+        left: 605px;
+    }
+}
+
+@keyframes third {
+    to {
+        transform: scale(0.08);
+        top: -305px;
+        left: 277px;
+    }
+}
+
+@keyframes four {
+    to {
+        transform: scale(0.08);
+        top: -305px;
+        left: -45px;
+    }
+}
+
+.cart-field {
+    width: 90%;
+    height: 700px;
+    background: white;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 20px;
+    position: absolute;
+    top: -700px;
+    left: 5%;
+    transition: 0.5s;
+}
+.cart-field.display {
+    top: 200px;
+}
+.cart-field .item,
+.cart-field .item:hover {
+    width: 96%;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 30px auto;   
+}
+.cart-field .item img,
+.cart-field .item:hover img {
+    transform: scale(1);
+    width: 30%;
+}
+.cart-field .item .data {
+    width: 60%;
+    position: relative;
+    height: 100%;
+    padding: 30px;
+    left:  auto;
+    background: inherit;
+}
+.cart-field .item .data strong,
+.cart-field .item .data .price {
+    font-size: 30px;
+    margin: 20px 10px 0 0;
+}
+.cart-field .data p:first-child strong {
+    width: 70%;
+}
+.cart-field .data p small {
+    font-size: 20px;
+}
+.cart-field .in {
+    display: inline;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 25px;
+}
+.cart-field .image-animate.active {
+    display: none;
+}
